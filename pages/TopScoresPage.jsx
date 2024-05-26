@@ -31,11 +31,11 @@ useEffect(() => {
 
   return (
     <View style={styles.container}>
-      <KittenText style={styles.title} category='h4'>Top Scorers</KittenText>
+      <KittenText style={styles.title} category='h4'>{t('TopScorers')}: </KittenText>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="League ID"
+          placeholder={t('EnterLeagueID')}
           value={leagueId}
           onChangeText={text => setLeagueId(text)}
         />
@@ -48,13 +48,13 @@ useEffect(() => {
             </View>
             <View style={styles.statsContainer}>
               <View style={styles.statItem}>
-                <Text>Team: {player.team_name}</Text>
+                <Text>{t('Team')}: {player.team_name}</Text>
               </View>
               <View style={styles.statItem}>
-                <Text>Goals: {player.goals}</Text>
+                <Text>{t('Goals')}:  {player.goals}</Text>
               </View>
               <View style={styles.statItem}>
-                <Text>Assists: {player.assists || 'N/A'}</Text>
+                <Text>{t('Assists')}:  {player.assists || 'N/A'}</Text>
               </View>
             </View>
           </Card>

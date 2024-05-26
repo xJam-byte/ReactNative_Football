@@ -1,6 +1,7 @@
 import { Card, Text as KittenText } from '@ui-kitten/components';
 import React, { useEffect, useState  } from 'react'
 import { View, Text, Image,StyleSheet } from 'react-native'
+import Switcher from '../components/Switcher';
 
 export default function MainPage() {
     [info, setInfo] = useState([])
@@ -14,6 +15,7 @@ export default function MainPage() {
   return (
     <View style={styles.container}>
       <KittenText style={styles.title} category='h4'>Countries</KittenText>
+      <Switcher/>
       {info.map((one, index) => (
         <Card key={index} style={styles.card}>
           <View style={styles.cardContent}>

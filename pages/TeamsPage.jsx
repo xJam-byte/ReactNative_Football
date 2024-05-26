@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, TextInput, Image, StyleSheet, Text, Button } from 'react-native';
 import { Card, Text as KittenText } from '@ui-kitten/components';
+import { useTranslation } from 'react-i18next';
 
 export default function TeamsPage() {
   const [teamId, setTeamId] = useState('96');
   const [info, setInfo] = useState([]);
+  const { t } = useTranslation();
 
   const fetchData = () => {
     fetch(`https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=${teamId}&APIkey=a7527eca9b38392785db78d01d2a9e5184404920db0cd6467c83ea05b1b8ad7e`)
@@ -27,7 +29,7 @@ export default function TeamsPage() {
     <View style={styles.inputContainer}>
       <TextInput
         style={styles.input}
-        placeholder="Team ID"
+        placeholder={t('')}
         value={teamId}
         onChangeText={text => setTeamId(text)}
       />
